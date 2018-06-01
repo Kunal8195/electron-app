@@ -2,7 +2,7 @@
 // if you know you will be communicating with a server different from the one that served you the page you are on.
 // this only works because the socket.io library assumes with this syntax that the socket.io server
 // lives at the same address as the server that served this page (this should mostly be your case)
-var socket = io('ws://localhost:3000?botmasterUserId=00001');
+var socket = io('ws://52.15.46.77:3000?botmasterUserId=00001');
 
 // just get the html elements we will be needing by ID
 var form = document.getElementById('form');
