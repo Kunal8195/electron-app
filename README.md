@@ -1,3 +1,12 @@
+Virtual Env setup
+
+pip install virtualenv  
+cd my_project_folder  
+virtualenv my_project  
+source my_project/bin/activate
+
+
+
 Set the environment variables for Linux (Ubuntu) 
 
 # On Linux / OS X:
