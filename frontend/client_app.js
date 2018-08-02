@@ -18,7 +18,7 @@ form.onsubmit = function(event) {
   }
   // Add the user message to the web page
   messages.insertAdjacentHTML('beforeend',
-    `<li class="user-message">${textInput.value}</li>`);
+  `<div><li class="bubble client">${textInput.value}</li></div>`);
   // create a botmaster compatible message from the text input by the user
   const update = {
     message: {
@@ -29,7 +29,10 @@ form.onsubmit = function(event) {
   socket.send(update);
   // finally, clear the user textInput field
   textInput.value = '';
+  messages.scrollTo(0,document.body.scrollHeight);
 };
+
+
 
 socket.on('message', function(botmasterMessage){
   var textMessage = botmasterMessage.message.text;
@@ -37,5 +40,6 @@ socket.on('message', function(botmasterMessage){
   console.log(JSON.stringify(textMessage));
 
   messages.insertAdjacentHTML('beforeend',
-    `<li class="botmaster-message">${textMessage}</li>`);
+  `<div style="display:inline-block; width:60%;"><img src="../img/bot.png" style="width:40px; height:40px; float:left; margin-top:5px;"/><li class="bubble server" style="margin-left: 10px;">${textMessage}</li></div>`);
 });
+
